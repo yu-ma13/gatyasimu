@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import Entity.User;
 
 public class UserDAO {
-	private final String user = "root";
-	private final String pass = "2434";
+	private final String user = "";
+	private final String pass = "";
 	private final String url = "jdbc:mysql://localhost/gatyasimu";
 	
 	public User findUser(String name) {
