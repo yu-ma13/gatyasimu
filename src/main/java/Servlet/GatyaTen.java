@@ -43,40 +43,47 @@ public class GatyaTen extends HttpServlet {
 		pr.add(request.getParameter("pr5"));
 		
 		if(ra.get(0) != null && ra.get(0).length() != 0 
-			&& pr.get(0) != null && pr.get(0).length() != 0) {
-			
+				&& pr.get(0) != null && pr.get(0).length() != 0) {
 			SetRarityLogic SRL = new SetRarityLogic();
 			List<String> rarity = SRL.execute(ra);
 			SetProbabilityLogic SPL = new SetProbabilityLogic();
-			List<Double> probability = SPL.execute(rarity.size(), pr);
-			JudgeProbabilityLogic JPL = new JudgeProbabilityLogic();
-			boolean isPro = JPL.execute(probability);
-			
-			if(isPro) {
-				HttpSession session = request.getSession();
-				Contents contents = (Contents) session.getAttribute("contents");
-				GatyaLogic GL = new GatyaLogic();
-				List<String> result = GL.execute(contents.getRarity(), contents.getProbability(), 10);
-				GatyaTenLogic GTL = new GatyaTenLogic();
-				result.set(9, GTL.execute(rarity, probability));
-				
-				String moneyText = request.getParameter("money");
-				if(moneyText != null && moneyText.length() != 0) {
-					int moneyNum = Integer.parseInt(moneyText);
-					Money money = (Money) session.getAttribute("money");
-					money.sumMoney(moneyNum);
-					request.setAttribute("money", money);
+			try {
+				List<Double> probability = SPL.execute(rarity.size(), pr);
+				JudgeProbabilityLogic JPL = new JudgeProbabilityLogic();
+				boolean isPro = JPL.execute(probability);
+				if(isPro) {
+					HttpSession session = request.getSession();
+					Contents contents = (Contents) session.getAttribute("contents");
+					GatyaLogic GL = new GatyaLogic();
+					List<String> result = GL.execute(contents.getRarity(), contents.getProbability(), 10);
+					GatyaTenLogic GTL = new GatyaTenLogic();
+					result.set(9, GTL.execute(rarity, probability));
+					
+					String moneyText = request.getParameter("money");
+					if(moneyText != null && moneyText.length() != 0) {
+						int moneyNum = Integer.parseInt(moneyText);
+						Money money = (Money) session.getAttribute("money");
+						money.sumMoney(moneyNum);
+						request.setAttribute("money", money);
+					}
+					request.setAttribute("result", result);
+					request.setAttribute("loop", 9);
+					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaResult.jsp");
+					d.forward(request, response);
+				} else {
+					String error = "※各レアリティの合計が100%ではありません";
+					request.setAttribute("error", error);
+					request.setAttribute("ra", ra);
+					request.setAttribute("pr", pr);
+					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+					d.forward(request, response);
 				}
-				request.setAttribute("result", result);
-				request.setAttribute("loop", 9);
-				RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaTenResult.jsp");
-				d.forward(request, response);
-			} else {
-				String error = "※各レアリティの合計が100%ではありません";
+			} catch(Exception e) {
+				String error = "※入力に不備があります";
 				request.setAttribute("error", error);
 				request.setAttribute("ra", ra);
 				request.setAttribute("pr", pr);
-				RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaTen.jsp");
+				RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 				d.forward(request, response);
 			}
 		} else {
@@ -84,7 +91,7 @@ public class GatyaTen extends HttpServlet {
 			request.setAttribute("error", error);
 			request.setAttribute("ra", ra);
 			request.setAttribute("pr", pr);
-			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaTen.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 			d.forward(request, response);
 		}
 	}
