@@ -28,7 +28,7 @@ public class Gatya extends HttpServlet {
 			if(gatyaNum <= 0 || gatyaNum > 100) {
 				String error = "※入力に不備があります";
 				request.setAttribute("error", error);
-				RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatya.jsp");
+				RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 				d.forward(request, response);
 			} else {
 				HttpSession session = request.getSession();
@@ -53,7 +53,7 @@ public class Gatya extends HttpServlet {
 		} else {
 			String error = "※試行回数が入力されていません";
 			request.setAttribute("error", error);
-			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatya.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 			d.forward(request, response);
 		}
 	}
