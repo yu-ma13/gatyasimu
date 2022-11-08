@@ -32,7 +32,6 @@ public class UserRegister extends HttpServlet {
 		String checkPass = request.getParameter("checkPass");
 		FindUser FU = new FindUser();
 		User user = FU.execute(name);
-		
 		UserRegisterLogic URL = new UserRegisterLogic();
 		boolean isRegister = URL.execute(user, name, pass, checkPass);
 		if(isRegister) {
