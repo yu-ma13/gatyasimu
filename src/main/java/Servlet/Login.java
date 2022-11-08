@@ -16,7 +16,7 @@ import BO.LoginLogic;
 import Entity.Money;
 import Entity.User;
 
-@WebServlet("/Login")
+@WebServlet("/Top")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 			List<String> mysetNames = FM.execute(loginUser);
 			session.setAttribute("mysetNames", mysetNames);
 			session.setAttribute("money", money);
-			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
 			d.forward(request, response);
 		} else {
 			response.sendRedirect("/gatyasimu/");
@@ -53,7 +53,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("loginUser", user);
 			session.setAttribute("money", money);
 			session.setAttribute("mysetNames", mysetNames);
-			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
 			d.forward(request, response);
 		} else {
 			String[] error = {"※ログインに失敗しました。", " ユーザー名、パスワードを見直しください"};
