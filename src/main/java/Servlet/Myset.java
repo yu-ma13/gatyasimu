@@ -36,7 +36,7 @@ public class Myset extends HttpServlet {
 		request.setAttribute("ra", ra);
 		request.setAttribute("pr", pr);
 		request.setAttribute("mysetName", name);
-		RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+		RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
 		d.forward(request, response);
 	}
 
