@@ -11,10 +11,7 @@
 <body class="bg-light">
 	<div class="d-flex bd-highlight bg-success  text-white">
 		<h1 class="me-auto pt-2 ps-2 bd-highlight">ガチャシミュ</h1>
-		<p class="pt-2 pe-2 bd-highlight">ユーザー名:<c:out value="${loginUser.name }"/></p>
-	</div>
-	<div class="d-flex justify-content-end pe-2 bg-success  text-white">
-		<p>使用金額: <c:out value="${money.money }"/>円</p>
+		<p class="pt-3 pe-2 bd-highlight">ユーザー名:<c:out value="${loginUser.name }"/></p>
 	</div>
 	<div class="d-flex justify-content-end mt-2">
 		<nav aria-label="breadcrumb">
