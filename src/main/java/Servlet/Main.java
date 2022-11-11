@@ -50,10 +50,8 @@ public class Main extends HttpServlet {
 				boolean isPro = JPL.execute(probability);
 				if(isPro) {
 					Contents contents = new Contents(rarity, probability);
-					int loop = contents.getRarity().size() - 1;
 					HttpSession session = request.getSession();
 					session.setAttribute("contents", contents);
-					session.setAttribute("loop", loop);
 					request.setAttribute("ra", ra);
 					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 					d.forward(request, response);
