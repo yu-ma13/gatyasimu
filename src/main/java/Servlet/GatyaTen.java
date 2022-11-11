@@ -71,7 +71,7 @@ public class GatyaTen extends HttpServlet {
 					d.forward(request, response);
 				} else {
 					String error = "※各レアリティの合計が100%ではありません";
-					request.setAttribute("error", error);
+					request.setAttribute("errorTen", error);
 					request.setAttribute("ra", ra);
 					request.setAttribute("pr", pr);
 					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
@@ -79,7 +79,7 @@ public class GatyaTen extends HttpServlet {
 				}
 			} catch(Exception e) {
 				String error = "※入力に不備があります";
-				request.setAttribute("error", error);
+				request.setAttribute("errorTen", error);
 				request.setAttribute("ra", ra);
 				request.setAttribute("pr", pr);
 				RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
@@ -87,7 +87,7 @@ public class GatyaTen extends HttpServlet {
 			}
 		} else {
 			String error = "※入力に不備があります";
-			request.setAttribute("error", error);
+			request.setAttribute("errorTen", error);
 			request.setAttribute("ra", ra);
 			request.setAttribute("pr", pr);
 			RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
