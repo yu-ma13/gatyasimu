@@ -55,7 +55,6 @@ public class Main extends HttpServlet {
 					session.setAttribute("contents", contents);
 					session.setAttribute("loop", loop);
 					request.setAttribute("ra", ra);
-					request.setAttribute("pr", pr);
 					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 					d.forward(request, response);
 				} else {
