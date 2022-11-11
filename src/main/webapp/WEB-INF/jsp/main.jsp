@@ -97,9 +97,9 @@
 							<input class="form-control" type="text" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="10" name="pr5" 
 								<c:if test="${not empty pr }">value="${pr.get(4) }"</c:if> placeholder="排出率(%)">
 						</div>
-						<c:if test="${not empty error }">
+						<c:if test="${not empty errorTen }">
 							<div class="text-danger mb-3">
-								<p>${error }</p>
+								<p>${errorTen }</p>
 							</div>
 						</c:if>
 					</div>
