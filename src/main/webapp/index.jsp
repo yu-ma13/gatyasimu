@@ -18,9 +18,9 @@
 			 	<p class="fs-3">〜　ログイン画面　〜</p>
 			 </div>
 		</div>
-		<div class="row justify-content-center">
-			 <div class="col-auto">
-			 	<form action="/gatyasimu/Top" method="post">
+		<form action="/gatyasimu/Top" method="post">
+			<div class="row justify-content-center">
+				 <div class="col-auto">
 			 		<div class="mb-3">
 			 			<label class="form-label">ユーザー名</label>
 			 			<input class="form-control" type="text" maxlength="10" name="name" 
@@ -37,13 +37,21 @@
 							<p>${error[1] }</p>
 						</c:if>
 					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				 <div class="col-auto">
 					<div class="mb-3">
 						<input class="btn btn-outline-success" type="submit" Value="ログイン">
 					</div>
-				</form>
+				</div>
+			</div>
+		</form>
+		<div class="row justify-content-center">
+			<div class="col-auto">
 				<a class="link-primary" href="/gatyasimu/UserRegister">新規登録はこちらから</a>
-		 	</div>
-		 </div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

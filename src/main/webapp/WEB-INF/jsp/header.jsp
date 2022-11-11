@@ -19,7 +19,7 @@
 	<div class="d-flex justify-content-end mt-2">
 		<nav aria-label="breadcrumb">
   			<ol class="breadcrumb">
-  				<li class="breadcrumb-item"><a class="link-primary" href="/gatyasimu/Top">メイン画面</a></li>
+  				<li class="breadcrumb-item"><a class="link-primary" href="/gatyasimu/Top">入力画面</a></li>
   				<li class="breadcrumb-item"><a class="link-danger" href="/gatyasimu/Logout">ログアウトして終了</a></li>
   			 </ol>
 		</nav>
