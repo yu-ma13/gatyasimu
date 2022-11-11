@@ -18,8 +18,8 @@
 			<ul class="dropdown-menu">
 				<c:if test="${not empty mysetNames }">
 					<c:forEach var="i" begin="0" end="${mysetNames.size() - 1 }" step="1">
-						<form action="/gatyasimu/Myset" method="post">
-							<input class="btn btn-outline-success" name="name" type="submit" value="${mysetNames.get(i) }">
+						<form action="Myset" method="post">
+							<input class="btn btn-outline-success ms-3 mb-3" name="name" type="submit" value="${mysetNames.get(i) }">
 						</form>
 					</c:forEach>
 					<a class="link-danger" href="/gatyasimu/MysetDelete">マイセットの削除</a>

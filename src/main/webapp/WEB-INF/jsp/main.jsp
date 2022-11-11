@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-auto">
-					<p class="fs-4">〜　確認画面　〜</p>
+					<p class="fs-3">〜　確認画面　〜</p>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -50,7 +50,7 @@
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-auto">
-					<p class="fs-4">〜　10連確定枠を設定して実行　〜</p>
+					<p class="fs-3">〜　10連確定枠を設定して実行　〜</p>
 				</div>
 			</div>
 			<div class="row justify-content-center">
