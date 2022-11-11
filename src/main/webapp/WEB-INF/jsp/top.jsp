@@ -92,10 +92,6 @@
 							<p>${error }</p>
 						</div>
 					</c:if>
-					<div class="input-group mb-2">
-						<label class="input-group-text bg-success text-white">ガチャ1回当たりの金額</label>
-						<input class="form-control" type="text" pattern="^[1-9][0-9]*$" maxlength="4" name="money" placeholder="0〜9999(円)">
-					</div>
 				</div>
 			</div>
 			<div class="row justify-content-center">
