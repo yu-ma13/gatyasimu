@@ -67,7 +67,7 @@ public class GatyaTen extends HttpServlet {
 						request.setAttribute("money", money);
 					}
 					request.setAttribute("result", result);
-					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaResult.jsp");
+					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaTenResult.jsp");
 					d.forward(request, response);
 				} else {
 					String error = "※各レアリティの合計が100%ではありません";
