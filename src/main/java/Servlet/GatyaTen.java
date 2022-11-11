@@ -61,7 +61,7 @@ public class GatyaTen extends HttpServlet {
 					
 					String moneyText = request.getParameter("money");
 					if(moneyText != null && moneyText.length() != 0) {
-						int moneyNum = Integer.parseInt(moneyText);
+						int moneyNum = Integer.parseInt(moneyText) * 10;
 						Money money = (Money) session.getAttribute("money");
 						money.sumMoney(moneyNum);
 						request.setAttribute("money", money);
