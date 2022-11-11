@@ -67,7 +67,6 @@ public class GatyaTen extends HttpServlet {
 						request.setAttribute("money", money);
 					}
 					request.setAttribute("result", result);
-					request.setAttribute("loop", 9);
 					RequestDispatcher d = request.getRequestDispatcher("/WEB-INF/jsp/gatyaResult.jsp");
 					d.forward(request, response);
 				} else {
